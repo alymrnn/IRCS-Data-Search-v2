@@ -59,7 +59,7 @@ include ('plugins/system_plugins/navbar/index_navbar.php');
                      <button class="btn btn-block d-flex justify-content-left" id="export_record"
                         onclick="export_ircs_data_count()"
                         style="color:#fff;height:35px;background: #7A5C94;font-size:15px;font-weight:normal;"
-                        onmouseover="this.style.backgroundColor='#683692'; this.style.color='#FFF';"
+                        onmouseover="this.style.backgroundColor='#523B66'; this.style.color='#FFF';"
                         onmouseout="this.style.backgroundColor='#7A5C94'; this.style.color='#FFF';"><i
                            class="fas fa-download" style="margin-top: 2px;"></i>&nbsp;Export</button>
                   </div>

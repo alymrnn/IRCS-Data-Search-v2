@@ -5,11 +5,9 @@ $method = $_POST['method'];
 
 function count_ircs_list($conn_ircs, $start_date, $end_date)
 {
-    // Adjust the date format if necessary
     $date_from = str_replace("T", " ", $start_date);
     $date_to = str_replace("T", " ", $end_date);
 
-    // Corrected SQL query without alias for the subquery
     $query = "
         SELECT COUNT(*)
         FROM (
@@ -24,20 +22,16 @@ function count_ircs_list($conn_ircs, $start_date, $end_date)
     try {
         $stmt = oci_parse($conn_ircs, $query);
 
-        // Bind parameters
         oci_bind_by_name($stmt, ':date_from', $date_from);
         oci_bind_by_name($stmt, ':date_to', $date_to);
 
-        // Execute the statement
         oci_execute($stmt);
 
-        // Fetch the result
         $total = 0;
         if ($row = oci_fetch_assoc($stmt)) {
-            $total = $row['COUNT(*)']; // Fetch the count result
+            $total = $row['COUNT(*)']; 
         }
 
-        // Free resources
         oci_free_statement($stmt);
 
     } catch (Exception $e) {
@@ -116,9 +110,8 @@ if ($method == 'search_ircs_data_count') {
 
         oci_execute($stmt);
 
-        $c = $page_first_result + 1; // Adjust starting count based on pagination
+        $c = $page_first_result + 1; 
         if ($row = oci_fetch_assoc($stmt)) {
-            // Rewind to the beginning
             oci_execute($stmt);
 
             while ($row = oci_fetch_assoc($stmt)) {
@@ -142,7 +135,6 @@ if ($method == 'search_ircs_data_count') {
         echo 'Query failed: ' . $e->getMessage();
     }
 
-    // Optionally, you can close the connection here if needed
     oci_close($conn_ircs);
 }
 

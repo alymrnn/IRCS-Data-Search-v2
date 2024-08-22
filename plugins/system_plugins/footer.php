@@ -1,5 +1,5 @@
 <footer class="main-footer" style="background:#2b2d42; color:white; font-size: 14px;">
-    Copyright &copy; 2024. Aly Maranan. All rights reserved.
+    Copyright &copy; 2024. AKM. All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
         Version 1.0.0
     </div>

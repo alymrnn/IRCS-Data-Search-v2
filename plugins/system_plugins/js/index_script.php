@@ -9,7 +9,6 @@
         var scrollHeight = this.scrollHeight;
         var offsetHeight = this.offsetHeight;
 
-        // Check if the scroll reached the bottom
         if ((offsetHeight + scrollTop + 1) >= scrollHeight) {
             get_next_page();
         }
@@ -147,7 +146,6 @@
         var search_date_from = document.getElementById('search_date_from').value.trim();
         var search_date_to = document.getElementById('search_date_to').value.trim();
 
-        // Default dates if not provided
         if (search_date_from === '') {
             search_date_from = new Date().toISOString().slice(0, 10);
         }
@@ -155,7 +153,6 @@
             search_date_to = new Date().toISOString().slice(0, 10);
         }
 
-        // Open a new window to download the CSV file
         window.open(
             'process/exp_ircs_record.php?' +
             'search_date_from=' + encodeURIComponent(search_date_from) +
